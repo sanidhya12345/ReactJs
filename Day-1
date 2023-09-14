@@ -1,0 +1,47 @@
+React Notes:-
+
+Day1:-
+
+1. What is React?
+React is a JavaScript library for building a reusable user interface(UI). It was initially released on May 29, 2013. The current version is 16.13.1 and somehow it is stable. React was created by Facebook. React makes creating UI components very easy. The official React documentation can be found here. When we work with React we do not interact directly with the DOM. React has its own way to handle the DOM(Document Object Model) manipulation. React uses its virtual DOM to make new changes and it updates only the element, that needs changing. Do not directly interact with DOM when you build a React Application and leave the DOM manipulation job for the React virtual DOM. In this challenge, we will develop 10-15 web applications using React. A web application, or a website, is made of buttons, links, forms with different input fields, header, footer, sections, articles, texts, images, audios, videos and boxes with different shapes. We use react to make a reusable UI components of a website.
+
+To summarize:
+
+React was released in May 2013
+React was created by Facebook
+React is a JavaScript library for building user interfaces
+React is used to build single page applications - An application which has only one HTML page.
+React allows us to create reusable UI components.
+
+Why we use React?
+
+1.fast
+2.modular
+3.scalable
+4.flexible
+4.big community and popular
+5.open source
+6.High job opportunity
+
+
+
+Understand JSX:-
+
+JSX is JavaScript XML.By this we can use HTML with JavaScript.
+
+example:-
+
+const val=</h1> Hi! This is Sanidhya started learning React</h1>.
+
+the above contains the Html with Javascript hence this format is called JSX Notation.
+
+Commenting a jsx :-
+
+
+const heading=(<header>
+   <h1>Sanidhya Varshney</h1>
+   <h2>Software Developer</h2>
+</header>)
+
+
+
