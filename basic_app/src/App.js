@@ -1,23 +1,15 @@
-import pic from './photo.jpg';
-import './App.css';
-
+import "./App.css";
+import doSomething from "./functions.js";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={pic} className="App-logo" alt="logo" />
-           <p>
-            <h1>
-              My name is Sanidhya Varshney.
-            </h1>
-            <h2>
-              I am from Aligarh.
-            </h2>
-            <h3>
-              Graduate from GLA University Mathura.
-            </h3>
-           </p>
-      </header>
+       <div className="two">
+       <button type="" onClick={doSomething.addition}>Addition</button>  
+       <button type="" onClick={doSomething.subtract}>Subtraction</button>
+       <button type="" onClick={doSomething.multiply}>Multiplication</button>
+       <button type="" onClick={doSomething.division}>Division</button>
+       </div>
+          
     </div>
   );
 }
