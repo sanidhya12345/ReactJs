@@ -33,4 +33,20 @@
     border-radius: 5px;
     padding: 5px;
     background-color: white;
+    border: none;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.button button{
+    padding: 10px 100px;
+    font-size: 25px;
+    color: white;
+    background-color: lightcoral;
+    border:none;
+    border-radius: 10px;
 }

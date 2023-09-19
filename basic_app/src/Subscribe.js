@@ -9,13 +9,12 @@ const Subscribe=()=>(
         </h3>
         <div className="input_btn">
             <div className="input">
-                <input text="" placeholder="First Name"></input>
-                <input text="" placeholder="Last Name"></input>
-                <input text="" placeholder="E-mail"></input>
+                <input text="" placeholder="First Name" id="1"></input>
+                <input text="" placeholder="Last Name" id="2"></input>
+                <input text="" placeholder="E-mail" id="3"></input>
             </div>
-
             <div className="button">
-                
+                <button type="">Submit</button>
             </div>
         </div>
     </div>
