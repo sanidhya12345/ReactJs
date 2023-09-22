@@ -21,52 +21,76 @@ function test_prime(n)
     return true;  
   }
 }
+const Generator=({numbers})=>{
+   const style={
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center'
+   }
+   const lst=numbers.map((number)=>{
+      if(number%2===0 && test_prime(number)===true && number!=0 ){
+        return <Div text={number} color="#FF0000"></Div>
+      }
+      else if(test_prime(number)==true && number!=0){
+        return <Div text={number} color="#FF0000"></Div>
+      }
+      else if(number%2===0 || number==0){
+        return <Div text={number} color="#00FF00"></Div>
+      }
+      else{
+        return <Div text={number} color="#FFF000"></Div>
+      }
+   })
+   return(
+    <div style={style}>
+      {lst}
+    </div>
+   )
+}
 const Div=(props)=>{
   const style={
-     width:'100px',
-     height:'100px',
-     marginRight:'2px',
-     backgroundColor:props.color, 
+    width:'100px',
+    height:'100px',
+    marginRight:'2px',
+    marginTop:'2px',
+    backgroundColor:props.color
+  }
+  const headStyle={
+    color:"#FFFFFF"
   }
   return(
-     <div style={style}>
-       <h1>
-         {props.text}
-       </h1>
-    </div>)
-}
-
-const Generator=({numbers})=>{
-   return (numbers.map((number)=>{
-    if(test_prime(number)==true){
-      <Div text={number} color={"#FFF000"}></Div>
-    }
-    else{
-      <Div text={number} color={"#FFFF00"}></Div>
-    }
-
-   }
-   )
-   )
+    <div style={style}>
+      <h1 style={headStyle}>{props.text}</h1>
+    </div>
+  )
 }
 const App=()=>{
-  const style={
-     display:'flex',
-     justifyContent:'center',
-     alignItems:'center'
+  const mainStyle={
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center'
   }
-    return (
-      <div className="app">
-         <h1>
-           30 Days Of React
-         </h1>
-         <h2>
-            Number Generator
-         </h2>
-         <div className="colors" style={style}>
-          <Generator numbers={[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]}></Generator>
-         </div>
+   const style={
+    display:'block',
+    backgroundColor:"#FFFFFF",
+    height:'408px',
+    width:'816px'
+   }
+  return(
+    <div className="app">
+      <h1>30 Days of React</h1>
+      <h2>Number Generator</h2>
+      <div style={mainStyle}>
+        <div style={style}>
+           <Generator numbers={[0,1,2,3,4,5,6,7]}></Generator>
+           <Generator numbers={[8,9,10,11,12,13,14,15]}></Generator>
+           <Generator numbers={[16,17,18,19,20,21,22,23]}></Generator>
+           <Generator numbers={[24,25,26,27,28,29,30,31]}></Generator>
+        </div>
       </div>
-    )
+     
+    </div>
+  )
 }
+
 export default App;
