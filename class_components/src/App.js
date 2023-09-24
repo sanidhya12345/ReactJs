@@ -1,5 +1,7 @@
 import React from 'react'
-import PropsInClass from './PropsInClass';
+import MethodsInClass from './MethodsInClass';
+//import DestructuringProps from './DestructuringProps';
+//import PropsInClass from './PropsInClass';
 class App extends React.Component {
     render(){
         const data={
@@ -11,7 +13,9 @@ class App extends React.Component {
             date:'Sep 23,2023'
         }
         return (
-           <PropsInClass data={data}></PropsInClass>
+          // <PropsInClass data={data}></PropsInClass>
+          //<DestructuringProps data={data}></DestructuringProps>
+          <MethodsInClass></MethodsInClass>
         )
     }
 }

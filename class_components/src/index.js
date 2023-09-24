@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App'
+import UserCard from './UserCard';
+//import App from './App'
+//import HexcolorGenerator from './HexColorGenerator';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App></App>
+    <UserCard></UserCard>
   </React.StrictMode>
 );
