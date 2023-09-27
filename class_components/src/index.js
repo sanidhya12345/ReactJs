@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 //import ImageChangeState from './ImageChangeState';
 import BackgroundChange from './BackgroundChange';
+import CountrySelector from './CountrySelector';
 //import App from './App'
 //import HexcolorGenerator from './HexColorGenerator';
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,6 +16,6 @@ const data={
 }
 root.render(
   <React.StrictMode>
-    <BackgroundChange data={data}></BackgroundChange>
+    <CountrySelector></CountrySelector>
   </React.StrictMode>
 );
