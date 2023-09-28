@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navBar{
+    height: 70px;
+    display: flex;
+}
+.name{
+    padding-top: 10px;
+    padding-left: 40px;
+}
+.h1{
+    font-size: 45px;
+}
+.itemList{
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    padding-left: 40%;
+}
+.items{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    margin-right: 30px;
+    font-size: 22px;
+}
