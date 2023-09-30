@@ -1,0 +1,7 @@
+Events:-
+An event is an action or occurrence recognized by a software. To make an event more clear let's use the daily activities we do when we use a computer such as clicking on a button, hover on an image, pressing a keyboard, scrolling the mouse wheel and etc.
+
+Handling events in React is very similar to handling elements on DOM elements using pure JavaScript. Some of the syntax difference between handling event in React and pure JavaScript:
+
+.React events are named using camelCase, rather than lowercase.
+.With JSX you pass a function as the event handler, rather than a string.
