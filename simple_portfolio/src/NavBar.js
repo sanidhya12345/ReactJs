@@ -2,7 +2,7 @@ import React from 'react'
 import './NavBar.css'
 import { SunnyOutline } from 'react-ionicons'
 import banner from './banner.png'
-
+import LoginForm from './LoginForm'
 const Middle=(props)=>{
   const style={
      float:'right',
@@ -45,7 +45,11 @@ class NavBar extends React.Component{
       height:'872px',
      backgroundColor:'#000000'
     },
-    color:'#FFFFFF'
+    color:'#FFFFFF',
+    clicked:false
+  }
+  handleMiddle=()=>{
+     this.setState({clicked:!this.state.clicked})
   }
   changeTheme=()=>{
      let iconColor=this.state.icon.color==='#FFFFFF'?'#000000':'#FFFFFF';
@@ -69,6 +73,7 @@ class NavBar extends React.Component{
      this.setState({color:middleColor})
   }
     render() {
+      let back=this.state.clicked?<Middle style={this.state.middle} color={this.state.color}></Middle>:<LoginForm></LoginForm>
       return (
         <div>
             <div className='navBar' style={this.state.navColor}>
@@ -80,16 +85,16 @@ class NavBar extends React.Component{
                     <a>Home</a>
                     <a>About</a>
                     <a>Skills</a>
-                    <a href='https://github.com/sanidhya12345' target='_blank'>My Work</a>
+                    <a>My Work</a>
                     <a>Contact</a>
+                    <button type="" onClick={this.handleMiddle}>Login</button>
                     <SunnyOutline style={this.state.icon} onClick={this.changeTheme}></SunnyOutline>
                 </div>
            </div>
         </div>
          <div>
-         <Middle style={this.state.middle} color={this.state.color}></Middle>
          </div>
-        
+           {back}
         </div>
       
       )
