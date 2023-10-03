@@ -1,35 +1,9 @@
 import React from 'react'
 import './NavBar.css'
 import { SunnyOutline } from 'react-ionicons'
-import banner from './banner.png'
-import LoginForm from './LoginForm'
-const Middle=(props)=>{
-  const style={
-     float:'right',
-     paddingRight:'140px',
-     width:'50%',
-     height:'700px',
-     paddingTop:'30px'
-  }
-  const div={
-    color:props.color,
-    paddingLeft:'70px',
-    paddingTop:'70px'
-  }
-   return(
-     <div style={props.style}>
-        <div>
-          <img src={banner} alt='' style={style}></img>
-        </div>
-        <div style={div}>
-          <h2>HEY THERE !</h2>
-          <h1>I AM SANIDHYA</h1>
-          <h3>A Software Developer</h3>
-          <p>I am a Full Stack developer.I like to do code things from the scratch,and enjoy bringing ideas to life in the browser</p>
-        </div>
-     </div>
-   )
-}
+import user from './LoginForm'
+import Middle from './Middle'
+
 class NavBar extends React.Component{
   state={
     icon:{
@@ -73,7 +47,8 @@ class NavBar extends React.Component{
      this.setState({color:middleColor})
   }
     render() {
-      let back=this.state.clicked?<Middle style={this.state.middle} color={this.state.color}></Middle>:<LoginForm></LoginForm>
+     console.log()
+     let back=this.state.clicked?<Middle style={this.state.middle} color={this.state.color}></Middle>:<user.LoginForm></user.LoginForm>
       return (
         <div>
             <div className='navBar' style={this.state.navColor}>
