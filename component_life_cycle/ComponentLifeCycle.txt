@@ -1,0 +1,8 @@
+Component Life Cycle:-
+
+Component life cycle is the process of mounting, updating and destroying a component in a React application. You can associate a component life cycle with the process of human growth:birth, adult, elderly and death. In React component also a component can be mounted or rendered the first time, can be updated by changing the data and also can be destroyed whenever it is not needed. In React each component has three main phases:
+
+#Mounting
+#Updating
+#Unmounting
+
