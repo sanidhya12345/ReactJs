@@ -6,9 +6,10 @@ import Constructor from './Constructor';
 import GetDrivedStateFromProps from './GetDerivedStateFromProps';
 import ComponentDidMount from './ComponentDidMount';
 import ShouldComponentUpdate from './ShouldComponentUpdate';
+import ComponentDidUpdate from './ComponentDidUpdate';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-   <ShouldComponentUpdate></ShouldComponentUpdate>
+     <ComponentDidUpdate></ComponentDidUpdate>
   </React.StrictMode>
 );
