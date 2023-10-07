@@ -1,0 +1,22 @@
+.image{
+    display:flex;
+    justify-content:center;
+    align-items:center
+}
+h1{
+    text-align: center;
+}
+.b1{
+    font-size: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+}
+.b2{
+    font-size: 20px;
+    margin-left: 10px;
+    border-radius: 50%;
+    color: white;
+    background-color: black;
+}
