@@ -2,19 +2,23 @@
 
 import React from "react";
 import "./todo.css";
-const listOftasks=[]
+const listOftasks=['running']
 class Todo extends React.Component {
   state = {
-    task:''
+    task:'',
+    listOftasks
   };
   handleChange = (e) => {
     const { name, value } = e.target;
-    this.setState({[name]:value});
-    listOftasks.push(this.state.task);
+    this.setState({task:value});
   };
   handleSubmit=(e)=>{
     e.preventDefault();
-    console.log(listOftasks);
+    this.state.listOftasks.push(this.state.task);
+    console.log(this.state.listOftasks);
+  }
+  handleClick=()=>{
+    return 
   }
   render() {
     const { task } = this.state;
@@ -23,7 +27,7 @@ class Todo extends React.Component {
       justifyContent: "center",
       alignItems: "center",
     };
-    //const list=this.state.task.map((task)=><div><h1>{task}</h1></div>)
+    const list=listOftasks.map((task)=><div><h1>{task}</h1></div>)
     return (
       <div>
         <div>
@@ -41,6 +45,7 @@ class Todo extends React.Component {
           </form>
         </div>
         <div style={style}>
+          {list}
         </div>
       </div>
     );
