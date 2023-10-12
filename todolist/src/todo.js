@@ -2,32 +2,49 @@
 
 import React from "react";
 import "./todo.css";
-const listOftasks=['running']
+
+const listOftasks = ["running"];
+
+const Button = (props) => {
+  return (<button className="done">done</button>);
+};
 class Todo extends React.Component {
   state = {
-    task:'',
-    listOftasks
+    task: "",
+    listOftasks,
   };
   handleChange = (e) => {
     const { name, value } = e.target;
-    this.setState({task:value});
+    this.setState({ task: value });
   };
-  handleSubmit=(e)=>{
+  handleSubmit = (e) => {
     e.preventDefault();
     this.state.listOftasks.push(this.state.task);
-    console.log(this.state.listOftasks);
-  }
-  handleClick=()=>{
-    return 
-  }
+    // console.log(this.state.listOftasks);
+  };
+  handleClick = () => {
+    return;
+  };
   render() {
     const { task } = this.state;
     const style = {
       display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
+      justifyContent: "left",
+      alignItems: "left",
+      textAlign: "left",
+      backgroundColor: "#FF0",
+      width: "300px",
+      height: "100px",
+      marginRight: "10px",
+      float: "left",
+      marginTop: "40px",
     };
-    const list=listOftasks.map((task)=><div><h1>{task}</h1></div>)
+    const list = listOftasks.map((task) => (
+      <div style={style}>
+        <h1>{task}</h1>
+        <Button state={this.state}></Button>
+      </div>
+    ));
     return (
       <div>
         <div>
@@ -41,12 +58,12 @@ class Todo extends React.Component {
               value={task}
               placeholder="Task"
               onChange={this.handleChange}></input>
-            <button type="submit">+</button>
+            <button type="submit" className="submit">
+              +
+            </button>
           </form>
         </div>
-        <div style={style}>
-          {list}
-        </div>
+        <div>{list}</div>
       </div>
     );
   }
