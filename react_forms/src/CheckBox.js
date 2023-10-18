@@ -1,43 +1,46 @@
-import React from 'react'
-import './CheckBox.css';
-let array=[];
-class CheckBox extends React.Component{
-    state={
-        plus:false,
-        minus:false,
-        mul:false,
-        divide:false,
-    }
-    handleChange=(e)=>{
-        const {name,value}=e.target;
-        name==='plus'?this.setState({plus:true}):this.setState({plus:false});
-    }
-    render() {
-      if(this.state.plus===true){
-        array.push('plus');
-      }
-    //   else if(this.state.minus===true){
-    //     array.push('minus');
-    //   }
-    //   else if(this.state.mul===true){
-    //     array.push('multiply');
-    //   }
-    //   else if(this.state.divide===true){
-    //     array.push('divide');
-    //   }
-      console.log(array);
-      return (
-        <div>
-           <label htmlFor=''>Plus</label>
-           <input type='checkbox' name='plus' onChange={this.handleChange}></input>
-           <label htmlFor=''>Minus</label>
-           <input type='checkbox' name='minus' onChange={this.handleChange}></input>
-           <label htmlFor=''>Multiply</label>
-           <input type='checkbox' name='mul' onChange={this.handleChange}></input>
-           <label htmlFor=''>Divide</label>
-           <input type='checkbox' name='divide'onChange={this.handleChange}></input>
-        </div>
-      )
-    }
+/** @format */
+import React from "react";
+import "./CheckBox.css";
+let array = [];
+class CheckBox extends React.Component {
+  state = {
+    plus: false,
+    minus: false,
+    mul: true,
+    divide: true,
+  };
+  plus = (e) => {
+    let plus = this.state.plus === false ? true : false;
+    this.setState({ plus: plus });
+  };
+  minus = (e) => {
+    let minus = this.state.minus === false ? true : false;
+    this.setState({ minus: minus });
+  };
+  mul = (e) => {
+    let mul = this.state.mul === false ? true : false;
+    this.setState({ mul: mul });
+  };
+  divide = (e) => {
+    let divide = this.state.divide === false ? true : false;
+    this.setState({ divide: divide });
+  };
+  showOutput=()=>{
+    console.log(this.state);
+  }
+  render() {
+    return (
+      <div>
+        <label htmlFor="">Plus</label>
+        <input type="checkbox" name="plus" onChange={this.plus}></input>
+        <label htmlFor="">Minus</label>
+        <input type="checkbox" name="minus" onChange={this.minus}></input>
+        <label htmlFor="">Multiply</label>
+        <input type="checkbox" name="mul" onChange={this.mul}></input>
+        <label htmlFor="">Divide</label>
+        <input type="checkbox" name="divide" onChange={this.divide}></input>
+      </div>
+    );
+  }
 }
 export default CheckBox;
