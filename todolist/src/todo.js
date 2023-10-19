@@ -1,69 +1,91 @@
 /** @format */
 
 import React from "react";
-import "./todo.css";
-
-const listOftasks = ["running"];
-
-const Button = (props) => {
-  return (<button className="done">done</button>);
+let tasks = [];
+const Task = ({ text }) => {
+  const style = {
+    backgroundColor: "#FF0123",
+    width: "400px",
+    height: "100px",
+    color:'#FFFFFF',
+    display:'flex',
+    marginTop:'30px'
+  };
+  const button={
+    marginLeft:'45%',
+    padding:'10px 10px 10px 10px',
+    fontSize:'40px',
+    borderRadius:'50%',
+    border:'none'
+  }
+  const remove=()=>{
+    return tasks.shift();
+  }
+  return (
+    <div style={style}>
+      <h1>{text}</h1>
+      <button style={button} onClick={remove}>-</button>
+    </div>
+  );
 };
+let task;
 class Todo extends React.Component {
   state = {
-    task: "",
-    listOftasks,
+    text: "",
   };
   handleChange = (e) => {
-    const { name, value } = e.target;
-    this.setState({ task: value });
+    let text = e.target.value;
+    this.setState({ text: text });
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    this.state.listOftasks.push(this.state.task);
-    // console.log(this.state.listOftasks);
-  };
-  handleClick = () => {
-    return;
+    tasks.push(this.state);
+    console.log(tasks);
+    task = tasks.map((text) => <Task text={text.text}></Task>);
   };
   render() {
-    const { task } = this.state;
-    const style = {
-      display: "flex",
-      justifyContent: "left",
-      alignItems: "left",
-      textAlign: "left",
-      backgroundColor: "#FF0",
-      width: "300px",
-      height: "100px",
-      marginRight: "10px",
-      float: "left",
-      marginTop: "40px",
+    const h1 = {
+      textAlign: "center",
     };
-    const list = listOftasks.map((task) => (
-      <div style={style}>
-        <h1>{task}</h1>
-        <Button state={this.state}></Button>
-      </div>
-    ));
+    const input = {
+      fontSize: "40px",
+    };
+    const divInput = {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    };
+    const styleButton = {
+      fontSize: "40px",
+      marginLeft: "20px",
+      backgroundColor: "#FF0",
+      borderRadius: "50%",
+      border: "none",
+      padding: "5px 5px 5px 5px",
+    };
+    const div = {
+      display: "grid",
+      backgroundColor: "#FF0012",
+    };
     return (
       <div>
         <div>
-          <h1>Todo List</h1>
+          <h1 style={h1}>Todo List</h1>
+          <div style={divInput}>
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                name="task"
+                placeholder="Task"
+                style={input}
+                onChange={this.handleChange}></input>
+              <button type="" style={styleButton}>
+                +
+              </button>
+            </form>
+          </div>
+          {task}
         </div>
-        <div className="inputContainer">
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              name="task"
-              value={task}
-              placeholder="Task"
-              onChange={this.handleChange}></input>
-            <button type="submit" className="submit">
-              +
-            </button>
-          </form>
-        </div>
-        <div>{list}</div>
       </div>
     );
   }
