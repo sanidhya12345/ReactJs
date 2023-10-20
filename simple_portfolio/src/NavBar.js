@@ -3,7 +3,9 @@ import './NavBar.css'
 import { SunnyOutline } from 'react-ionicons'
 import user from './LoginForm'
 import Middle from './Middle'
-
+import {BrowserRouter,Route,Routes} from 'react-router-dom';
+const Home=()=><h1>Welcome to Home Page</h1>
+const About=()=><h1>Welcome to About Page</h1>
 class NavBar extends React.Component{
   state={
     icon:{
