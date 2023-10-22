@@ -8,10 +8,22 @@ import Middle from "./Middle";
 import { BrowserRouter, Route, Routes, Link, Outlet } from "react-router-dom";
 const Home = () => <h1>Welcome to Home Page</h1>;
 const About = () => <h1>Welcome to About Page</h1>;
+const Skills=()=><h1>Welcome to skills page</h1>;
+const MyWork=()=><h1>Welcome to mywork page</h1>
+const Contact=()=><h1>Welcome to Contact Page</h1>
 const MiddleComp = ({ middle, color, to }) => {
   let mid = <Middle style={middle} color={color}></Middle>;
   if (to === "/about") {
     mid = <About></About>;
+  }
+  else if(to==="/skills"){
+    mid=<Skills></Skills>
+  }
+  else if(to==="/mywork"){
+    mid=<MyWork></MyWork>
+  }
+  else if(to==="/contact"){
+    mid=<Contact></Contact>
   }
   return <div>{mid}</div>;
 };
@@ -67,6 +79,10 @@ class NavBar extends React.Component {
     });
     this.setState({ color: middleColor });
   };
+  handleClick=(e)=>{
+     const id=e.target.id;
+     this.setState({to:id});
+  }
   render() {
     console.log();
     //let back=this.state.clicked?<Middle style={this.state.middle} color={this.state.color}></Middle>:<user.LoginForm></user.LoginForm>
@@ -86,10 +102,10 @@ class NavBar extends React.Component {
           <div className="itemList">
             <div className="items">
               <Link to="/">Home</Link>
-              <Link to="/about">About</Link>
-              <Link to="/skills">Skills</Link>
-              <Link to="/mywork">My Work</Link>
-              <Link to="/contact">Contact</Link>
+              <Link to="/about" id="about" onClick={this.handleClick}>About</Link>
+              <Link to="/skills" id="skills" onClick={this.handleClick}>Skills</Link>
+              <Link to="/mywork" id="mywork" onClick={this.handleClick}>My Work</Link>
+              <Link to="/contact" id="contact" onClick={this.handleClick}>Contact</Link>
               <Outlet />
 
               {/* <a>Home</a>
@@ -121,8 +137,27 @@ class NavBar extends React.Component {
             path="/about"
             element={
               <MiddleComp
-                middle={this.state.middle}
-                color={this.state.color}
+                to={`/${this.state.to}`}></MiddleComp>
+            }></Route>
+            <Route
+            exact
+            path="/skills"
+            element={
+              <MiddleComp
+                to={`/${this.state.to}`}></MiddleComp>
+            }></Route>
+            <Route
+            exact
+            path="/mywork"
+            element={
+              <MiddleComp
+                to={`/${this.state.to}`}></MiddleComp>
+            }></Route>
+            <Route
+            exact
+            path="/contact"
+            element={
+              <MiddleComp
                 to={`/${this.state.to}`}></MiddleComp>
             }></Route>
         </Routes>
