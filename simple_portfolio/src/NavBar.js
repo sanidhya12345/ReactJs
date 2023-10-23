@@ -2,12 +2,13 @@
 
 import React from "react";
 import "./NavBar.css";
-import { SunnyOutline } from "react-ionicons";
+import { MoonOutline } from "react-ionicons";
 import user from "./LoginForm";
+
 import Middle from "./Middle";
 import { BrowserRouter, Route, Routes, Link, Outlet } from "react-router-dom";
+import About from "./About";
 const Home = () => <h1>Welcome to Home Page</h1>;
-const About = () => <h1>Welcome to About Page</h1>;
 const Skills=()=><h1>Welcome to skills page</h1>;
 const MyWork=()=><h1>Welcome to mywork page</h1>
 const Contact=()=><h1>Welcome to Contact Page</h1>
@@ -39,8 +40,9 @@ class NavBar extends React.Component {
       backgroundColor: "#000000",
     },
     middle: {
-      height: "872px",
+      height: "858px",
       backgroundColor: "#000000",
+      textColor:'white',
     },
     color: "#FFFFFF",
     clicked: false,
@@ -73,7 +75,7 @@ class NavBar extends React.Component {
     });
     this.setState({
       middle: {
-        height: "872px",
+        height: "858px",
         backgroundColor: middleBack,
       },
     });
@@ -93,6 +95,10 @@ class NavBar extends React.Component {
     // if(this.state.to==="/about"){
     //   back=<About></About>
     // }
+    const link={
+       textDecoration:'none',
+       color:this.state.navColor.color
+    }
     return (
       <div>
         <div className="navBar" style={this.state.navColor}>
@@ -101,11 +107,12 @@ class NavBar extends React.Component {
           </div>
           <div className="itemList">
             <div className="items">
-              <Link to="/">Home</Link>
-              <Link to="/about" id="about" onClick={this.handleClick}>About</Link>
-              <Link to="/skills" id="skills" onClick={this.handleClick}>Skills</Link>
-              <Link to="/mywork" id="mywork" onClick={this.handleClick}>My Work</Link>
-              <Link to="/contact" id="contact" onClick={this.handleClick}>Contact</Link>
+              <Link to="/" style={link}>Home</Link>
+              <Link to="/about" id="about" onClick={this.handleClick} style={link}>About</Link>
+              <Link to="/skills" id="skills" onClick={this.handleClick} style={link}>Skills</Link>
+              <Link to="/mywork" id="mywork" onClick={this.handleClick} style={link}>My Work</Link>
+              <Link to="/contact" id="contact" onClick={this.handleClick} style={link}>Contact</Link>
+              <Link to="https://sanidhya12345.blogspot.com/" target="_blank" style={link}>Blog</Link>
               <Outlet />
 
               {/* <a>Home</a>
@@ -113,12 +120,9 @@ class NavBar extends React.Component {
               <a>Skills</a>
               <a>My Work</a>
               <a>Contact</a> */}
-              <button type="" onClick={this.handleMiddle}>
-                Login
-              </button>
-              <SunnyOutline
+              <MoonOutline
                 style={this.state.icon}
-                onClick={this.changeTheme}></SunnyOutline>
+                onClick={this.changeTheme}></MoonOutline>
             </div>
           </div>
         </div>
