@@ -126,7 +126,6 @@ class NavBar extends React.Component {
             </div>
           </div>
         </div>
-        <div></div>
         <Routes>
           <Route
             exact
