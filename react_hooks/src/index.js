@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { App } from './StateHook';
 import { ChangeAnimal } from './ChangeAnimal';
+import { SimpleCalculator } from './SimpleCalculator';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ChangeAnimal></ChangeAnimal>
+    <SimpleCalculator></SimpleCalculator>
   </React.StrictMode>
 );
