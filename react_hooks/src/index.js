@@ -4,10 +4,11 @@ import './index.css';
 import { App } from './StateHook';
 import { ChangeAnimal } from './ChangeAnimal';
 import { SimpleCalculator } from './SimpleCalculator';
+import { UseState } from './UseState';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <SimpleCalculator></SimpleCalculator>
+    <UseState></UseState>
   </React.StrictMode>
 );
