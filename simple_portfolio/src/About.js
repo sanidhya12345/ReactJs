@@ -1,36 +1,34 @@
-import './About.css'
 import photo from './photo.jpg'
 const About = () => {
     const style={
+        backgroundColor:'#fff323',
+        width:'450px',
+        height:'855px',
         display:'flex',
-        justifyContent:'left',
-        alignItems:'left',
+        justifyContent:'center',
+        alignItems:'center'
     }
-    const inner={
-        backgroundColor:'#ff2345',
-        width:'400px',
-        height:'400px',
-        marginTop:'150px',
-        borderRadius:'50%',
+    const photostyle={
+       width:'550px',
+       height:'700px',
+       border:'2px solid #000000',
+       marginLeft:'300px',
+       borderRadius:'100px'
+    }
+    const about={
         display:'flex',
-        justifyContent:'flex-end',
-        alignItems:'flex-end'
-    }
-    const innermost={
-        width:'300px',
-        height:'300px',
-        borderRadius:'50%'
+        justifyContent:'center',
+        alignItems:'center',
+        top:"0"
+
     }
     return(
         <div className="aboutContainer">
             <div style={style}>
-                <div style={inner}>
-                    <div style={innermost} className="innermost">
-                    </div>
-                </div>
+                <img src={photo} style={photostyle}></img>
             </div>
-            <div>
-                
+            <div style={about}>
+                <h1>hi</h1>
             </div>
         </div>
     )
