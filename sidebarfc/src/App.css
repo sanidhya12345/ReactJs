@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App{
+  height: 100vh;
+  width: 300px;
+}
+button{
+  height: 50px;
+  width: 50px;
+  border:none;
+  border-radius: 50%;
+}
