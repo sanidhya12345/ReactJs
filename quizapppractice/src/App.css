@@ -15,3 +15,12 @@ h2{
   margin-top: 40px;
   margin-left:40px;
 }
+input{
+   font-size: 30px;
+   margin-left:10px
+}
+label{
+  font-size: 30px;
+  margin-left:50px;
+  margin-top: 40px;
+}
