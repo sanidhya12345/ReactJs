@@ -2,6 +2,9 @@ import './App.css';
 import {useState} from 'react';
 function App() {
   const [value,setValue]=useState("");
+  const handleChange=(value)=>{
+      setValue(value);
+  }
   return (
     <div className="App">
        <div className="quiz_container">
@@ -10,25 +13,25 @@ function App() {
           <div>
             <label>A.8</label>
              <input type="radio" id="option1" value="option1" onChange={()=>{
-              setValue("option1")
+              handleChange("option1")
              }}checked={value==="option1"} ></input>
           </div>
           <div>
           <label>B.4</label>
              <input type="radio" id="option2" value="option2" onChange={()=>{
-              setValue("option2")
+              handleChange("option2")
              }} checked={value==="option2"}></input>
           </div>
           <div>
           <label>C.3</label>
              <input type="radio" id="option3" value="option3" onChange={()=>{
-              setValue("option3")
+              handleChange("option3")
              }} checked={value==="option3"}></input>
           </div>
           <div>
           <label>D.5</label>
-             <input type="radio" id="option4" value="option4" onChange={()=>{
-              setValue("option4")
+             <input type="radio" id="option4" value="option4" oonChange={()=>{
+              handleChange("option4")
              }} checked={value==="option4"}></input>
           </div>
           </div>
